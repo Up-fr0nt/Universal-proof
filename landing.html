@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proof — Verifiable Digital Work</title>
+  <style>
+    :root {
+      --bg: #060b0f;
+      --grid: rgba(0, 255, 170, 0.08);
+      --accent: #00ffae;
+      --text: #d7fdf0;
+      --muted: #7fa59a;
+    }* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: radial-gradient(circle at center, #081319 0%, var(--bg) 70%);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Radar grid */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black 30%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+  animation: drift 20s linear infinite;
+}
+
+@keyframes drift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 40px 40px, 40px 40px; }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6rem;
+}
+
+.logo {
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.cta-small {
+  border: 1px solid var(--accent);
+  padding: 0.5rem 1rem;
+  color: var(--accent);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 7rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #04110c;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 0 30px rgba(0,255,174,0.25);
+}
+
+section {
+  margin-bottom: 6rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  border: 1px solid rgba(0,255,174,0.15);
+  border-radius: 14px;
+  padding: 2rem;
+  background: rgba(5,15,20,0.6);
+  backdrop-filter: blur(4px);
+}
+
+.card h3 {
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(0,255,174,0.1);
+}
+
+@media (max-width: 600px) {
+  header { flex-direction: column; gap: 1rem; }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">PROOF</div>
+      <a href="index.html" class="cta-small">Generate Proof</a>
+    </header><section class="hero">
+  <h1>A cryptographic instrument for verifiable digital work</h1>
+  <p>
+    Prove authorship, priority, and integrity of research, writing, and creative work —
+    without servers, accounts, or revealing your content.
+  </p>
+  <a href="index.html" class="cta">Create a Proof</a>
+</section>
+
+<section>
+  <div class="grid">
+    <div class="card">
+      <h3>Local by Design</h3>
+      <p>Your files never leave your device. Proofs are generated and verified entirely in-browser.</p>
+    </div>
+    <div class="card">
+      <h3>Mathematically Verifiable</h3>
+      <p>Cryptographic signatures guarantee authenticity and timestamped commitment.</p>
+    </div>
+    <div class="card">
+      <h3>Content-Agnostic</h3>
+      <p>Works with documents, datasets, images, code, or any digital artifact.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="grid">
+    <div class="card">
+      <h3>For Researchers</h3>
+      <p>Establish priority of discovery and protect unpublished work.</p>
+    </div>
+    <div class="card">
+      <h3>For Writers</h3>
+      <p>Prove authorship before plagiarism or AI misattribution.</p>
+    </div>
+    <div class="card">
+      <h3>For Creators</h3>
+      <p>Create durable proof that your work existed first — without paywalls.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Proof establishes authorship through cryptography, not platforms.<br />
+  © 2026
+</footer>
+
+  </div>
+</body>
+</html>

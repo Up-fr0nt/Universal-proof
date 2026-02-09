@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css">
+  <title>Universal Proof</title>
+</head>
+<body>
+  <div class="container">
+  <div class="panel">
+    <!-- landing / generator / verification -->
+
+  <h1>Universal Proof</h1>
+  <p>Create a verifiable proof of existence.</p>
+  <input type="text" id="title" placeholder="Proof title" /><br /><br />
+<textarea id="description" placeholder="Description"></textarea><br /><br />
+<input
+  type="text"
+  id="parentProofInput"
+  placeholder="Optional: paste parent proof link"
+/>
+  <input type="file" id="fileInput" />
+  <br /><br />
+<button id="generateBtn">Generate Proof</button>
+<br /><br />
+<button id="copyLinkBtn" style="display:none;">Copy Proof Link</button>
+<hr />
+<h3>Verify Proof</h3<p><strong>Signed by:</strong> <code>${proof.signer}</code></p>
+${proof.parent ? `<p><strong>Derived from:</strong><br /><code>${proof.parent}</code></p>` : ''}
+<input type="file" id="verifyFile" />
+<p id="verifyResult"></p>
+<p id="verifyResult" style="font-size:16px; font-weight:bold;"></p>
+
+  <pre id="hashOutput"></pre>
+    </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
